@@ -69,7 +69,7 @@ Begin VB.Form Form2
    End
    Begin VB.Label Label2 
       BackColor       =   &H00FFFFFF&
-      Caption         =   "Version: 1.0.0"
+      Caption         =   "Version: 1.0.1"
       BeginProperty Font 
          Name            =   "Segoe UI"
          Size            =   9.75

@@ -23,6 +23,23 @@ Begin VB.Form Form1
    ScaleHeight     =   6105
    ScaleWidth      =   12495
    StartUpPosition =   2  'CenterScreen
+   Begin VB.CommandButton Command13 
+      Caption         =   "Preview messagebox"
+      BeginProperty Font 
+         Name            =   "Segoe UI Semibold"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1215
+      Left            =   4200
+      TabIndex        =   23
+      Top             =   4680
+      Width           =   2895
+   End
    Begin VB.CommandButton Command12 
       Caption         =   "Use custom icon and button code. This will allow you to type in your custom icon and button code into the textbox on the left"
       Height          =   975
@@ -248,10 +265,10 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1215
-      Left            =   1560
+      Left            =   120
       TabIndex        =   6
       Top             =   4680
-      Width           =   4455
+      Width           =   3855
    End
    Begin VB.TextBox Text2 
       BeginProperty Font 
@@ -444,7 +461,17 @@ End If
 End Sub
 
 Private Sub Command13_Click()
-Form2.Show
+If Text3.Text = "" Then
+c = MsgBox("You need to choose an icon on the right panel!", 0 + 64, "GUI VBScript messagebox creator")
+Else
+If Text4.Text = "" Then
+c = MsgBox("You need to choose a button on the right panel!", 0 + 64, "GUI VBScript messagebox creator")
+Else
+Dim buttonPreview As Integer
+buttonPreview = CInt(Text4.Text) + CInt(Text3.Text)
+PREVIEW = MsgBox(Text2.Text, buttonPreview, Text1.Text)
+End If
+End If
 End Sub
 
 Private Sub Command2_Click()
